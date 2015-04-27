@@ -12,9 +12,9 @@ namespace exercici2.original.model
     {
         public LoggerWrapper loggerWrapper { get; set; }
 
-        public OrderOnline()
+        public OrderOnline(LoggerWrapper loggerWrapper):base(new PaymentGatewayWrapper())
         {
-            this.loggerWrapper = new LoggerWrapper();
+            this.loggerWrapper = loggerWrapper;
         }
 
         public void Checkout(PaymentDetails paymentDetails, Cart cart)

@@ -35,7 +35,7 @@ namespace exercici2.original.tests
 
             InventorySystemWrapper inventorySystemWrapper = new InventorySystemWrapper();
 
-            var orderBase = new OrderBase();
+            var orderBase = new OrderBase(inventorySystemWrapper);
 
             orderBase.Checkout(cart);
         }
@@ -52,7 +52,9 @@ namespace exercici2.original.tests
                 CardholderName = "Customer Name",
             };
 
-            var orderByCreditCard = new OrderByCreditCard();
+            PaymentGatewayWrapper paymentGatewayWrapper = new PaymentGatewayWrapper();
+
+            var orderByCreditCard = new OrderByCreditCard(paymentGatewayWrapper);
 
             orderByCreditCard.Checkout(paymentDetails, cart);
         }
@@ -69,7 +71,9 @@ namespace exercici2.original.tests
                 CardholderName = "Customer Name",
             };
 
-            var orderOnline = new OrderOnline();
+            LoggerWrapper loggerWrapper = new LoggerWrapper();
+
+            var orderOnline = new OrderOnline(loggerWrapper);
 
             orderOnline.Checkout(paymentDetails, cart);
         }

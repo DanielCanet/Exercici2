@@ -10,9 +10,9 @@ namespace exercici2.original.model
     {
         public InventorySystemWrapper inventorySystemWrapper { get; set; }
 
-        public OrderBase()
+        public OrderBase(InventorySystemWrapper inventorySystemWrapper)
         {
-            this.inventorySystemWrapper = new InventorySystemWrapper();
+            this.inventorySystemWrapper = inventorySystemWrapper;
         }
 
         public bool Checkout(Cart cart)

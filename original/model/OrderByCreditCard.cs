@@ -10,9 +10,9 @@ namespace exercici2.original.model
     {
         public PaymentGatewayWrapper paymentGatewayWrapper { get; set; }
 
-        public OrderByCreditCard()
+        public OrderByCreditCard(PaymentGatewayWrapper paymentGatewayWrapper):base(new InventorySystemWrapper())
         {
-            paymentGatewayWrapper = new PaymentGatewayWrapper();
+            this.paymentGatewayWrapper = paymentGatewayWrapper;
         }
 
         public void Checkout(PaymentDetails paymentDetails, Cart cart)
