@@ -1,0 +1,24 @@
+D:\fonts\Solid\Exercici2\exercici2\bin\Debug\exercici2.dll
+D:\fonts\Solid\Exercici2\exercici2\bin\Debug\exercici2.pdb
+D:\fonts\Solid\Exercici2\exercici2\obj\Debug\exercici2.dll
+D:\fonts\Solid\Exercici2\exercici2\obj\Debug\exercici2.pdb
+D:\fonts\Solid\Exercici2\exercici2\bin\Debug\Moq.dll
+D:\fonts\Solid\Exercici2\exercici2\bin\Debug\Castle.Core.dll
+D:\fonts\Solid\Exercici2\exercici2\bin\Debug\Castle.DynamicProxy2.dll
+D:\fonts\Solid\Exercici2\exercici2\obj\Debug\exercici2.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\bin\Debug\exercici2.dll
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\bin\Debug\exercici2.pdb
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\bin\Debug\Castle.Core.dll
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\bin\Debug\Moq.dll
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\obj\Debug\exercici2.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\obj\Debug\exercici2.dll
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\Exercici 2\problema\exercici2\obj\Debug\exercici2.pdb
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\obj\Debug\exercici2.csprojResolveAssemblyReference.cache
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\obj\Debug\exercici2.dll
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\bin\Debug\exercici2.dll
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\bin\Debug\exercici2.pdb
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\bin\Debug\Castle.Core.dll
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\bin\Debug\Castle.DynamicProxy2.dll
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\bin\Debug\Moq.dll
+C:\Formacion\Coding Dojo\Exercici 2\problema\exercici2\obj\Debug\exercici2.pdb
