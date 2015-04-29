@@ -12,15 +12,12 @@ namespace exercici2.original.model
     {
         public LoggerWrapper loggerWrapper { get; set; }
         public PaymentDetails paymentDetails { get; set; }
-        //public PaymentGatewayWrapper paymentGatewayWrapper { get; set; }
 
         public OrderOnline(LoggerWrapper loggerWrapper, PaymentDetails paymentDetails)
             : base(new PaymentGatewayWrapper(), new PaymentDetails())
         {
             this.loggerWrapper = loggerWrapper;
             this.paymentDetails = paymentDetails;
-            //this.paymentDetails = paymentDetails;
-            //this.paymentGatewayWrapper = paymentGatewayWrapper;
         }
 
         public override bool Checkout(Cart cart)

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace exercici2.original.services
 {
-    class PaymentGatewayWrapper
+    class PaymentGatewayWrapper : IPaymentGatewayWrapper
     {
         public PaymentGateway paymentGateway { get; set; }
 
@@ -17,17 +17,9 @@ namespace exercici2.original.services
 
         public bool Charge(PaymentDetails paymentDetails, Cart cart)
         {
-        //using (var paymentGateway = new PaymentGateway())
-        //{
+
             try
             {
-                //this.paymentGateway.Credentials = "account credentials";
-                //this.paymentGateway.CardNumber = paymentDetails.CreditCardNumber;
-                //this.paymentGateway.ExpiresMonth = paymentDetails.ExpiresMonth;
-                //this.paymentGateway.ExpiresYear = paymentDetails.ExpiresYear;
-                //this.paymentGateway.NameOnCard = paymentDetails.CardholderName;
-                //this.paymentGateway.AmountToCharge = cart.TotalAmount;
-
                 this.paymentGateway.Charge();
                 
                 return true;

@@ -2,6 +2,7 @@
 using exercici2.original.model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using exercici2.original.services;
+using Moq;
 
 namespace exercici2.original.tests
 {
@@ -24,10 +25,6 @@ namespace exercici2.original.tests
 
         {
 
- 
-
-            //InventorySystemWrapper inventorySystemWrapper = new InventorySystemWrapper();
-
             var orderByCash = new OrderByCash();
 
             orderByCash.Checkout(cart);
@@ -45,9 +42,9 @@ namespace exercici2.original.tests
                 CardholderName = "Customer Name",
             };
 
-            PaymentGatewayWrapper paymentGatewayWrapper = new PaymentGatewayWrapper();
+            Mock<IPaymentGatewayWrapper> paymentGatewayWrapperMock = new Mock<IPaymentGatewayWrapper>();
 
-            var orderByCreditCard = new OrderByCreditCard(paymentGatewayWrapper, paymentDetails);
+            var orderByCreditCard = new OrderByCreditCard(paymentGatewayWrapperMock.Object, paymentDetails);
 
             orderByCreditCard.Checkout(cart);
         }

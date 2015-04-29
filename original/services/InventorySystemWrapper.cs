@@ -28,17 +28,7 @@ namespace exercici2.original.services
             {
                 result = false;
             }
-            //catch (InsufficientInventoryException ex)
-            //{
-            //    throw new OrderException("Insufficient inventory for item " + item.Sku, ex);
-            //    result = false;
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new OrderException("Problem reserving inventory", ex);
-            //    result = false;
-            //}
             return result;
         }
     }

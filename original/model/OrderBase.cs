@@ -25,23 +25,8 @@ namespace exercici2.original.model
             foreach (var item in cart.Items)
             {
 
-                //ENVUELVO EL SERVICIO DE INVENTARIO EN UN WRAPPER
-                //try
-                //{
-                    //HACEMOS EL NEW EN EL CONSTRUCTOR
-                //    var inventorySystem = new InventorySystem();
                 result = inventorySystemWrapper.Reserve(item);
 
-                //}
-                //catch (InsufficientInventoryException ex)
-                //{
-                //    throw new OrderException("Insufficient inventory for item " + item.Sku, ex);
-                //}
-                //catch (Exception ex)
-                //{
-                //    throw new OrderException("Problem reserving inventory", ex);
-                //}
-                //
             }
 
             return result;
