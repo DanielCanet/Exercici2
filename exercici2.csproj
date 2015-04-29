@@ -60,6 +60,7 @@
     <Compile Include="original\model\Order.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="original\model\OrderByCash.cs" />
     <Compile Include="original\model\OrderByCreditCard.cs" />
     <Compile Include="original\model\OrderException.cs">
       <SubType>Code</SubType>

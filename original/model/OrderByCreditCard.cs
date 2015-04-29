@@ -9,27 +9,29 @@ namespace exercici2.original.model
     class OrderByCreditCard:OrderBase
     {
         public PaymentGatewayWrapper paymentGatewayWrapper { get; set; }
+        public PaymentDetails paymentDetails { get; set; }
 
-        public OrderByCreditCard(PaymentGatewayWrapper paymentGatewayWrapper):base(new InventorySystemWrapper())
+        public OrderByCreditCard(PaymentGatewayWrapper paymentGatewayWrapper, PaymentDetails paymentDetails):base(new InventorySystemWrapper())
         {
             this.paymentGatewayWrapper = paymentGatewayWrapper;
+            this.paymentDetails = paymentDetails;
         }
 
-        public void Checkout(PaymentDetails paymentDetails, Cart cart)
+        public override bool Checkout(Cart cart)
         {
 
-            if (ChargeCard(paymentDetails, cart))
+            if (ChargeCard(cart))
             {
-                ReserveInventory(cart);
+                return ReserveInventory(cart);
 
-            }          
-
+            }
+            return false;
         }
 
-        public bool ChargeCard(PaymentDetails paymentDetailsCart, Cart cart)
+        public bool ChargeCard(Cart cart)
         {
 
-            return paymentGatewayWrapper.Charge(paymentDetailsCart, cart);
+            return paymentGatewayWrapper.Charge(this.paymentDetails, cart);
             
             //using (var paymentGateway = new PaymentGateway())
             //{

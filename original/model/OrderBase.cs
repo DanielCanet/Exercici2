@@ -6,7 +6,7 @@ using System.Text;
 
 namespace exercici2.original.model
 {
-    class OrderBase
+    abstract class OrderBase
     {
         public InventorySystemWrapper inventorySystemWrapper { get; set; }
 
@@ -15,10 +15,8 @@ namespace exercici2.original.model
             this.inventorySystemWrapper = inventorySystemWrapper;
         }
 
-        public bool Checkout(Cart cart)
-        {
-            return ReserveInventory(cart);
-        }
+        public abstract bool Checkout(Cart cart);
+
 
         public bool ReserveInventory(Cart cart)
 

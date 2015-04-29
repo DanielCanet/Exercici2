@@ -11,22 +11,29 @@ namespace exercici2.original.model
     class OrderOnline:OrderByCreditCard
     {
         public LoggerWrapper loggerWrapper { get; set; }
+        public PaymentDetails paymentDetails { get; set; }
+        //public PaymentGatewayWrapper paymentGatewayWrapper { get; set; }
 
-        public OrderOnline(LoggerWrapper loggerWrapper):base(new PaymentGatewayWrapper())
+        public OrderOnline(LoggerWrapper loggerWrapper, PaymentDetails paymentDetails)
+            : base(new PaymentGatewayWrapper(), new PaymentDetails())
         {
             this.loggerWrapper = loggerWrapper;
+            this.paymentDetails = paymentDetails;
+            //this.paymentDetails = paymentDetails;
+            //this.paymentGatewayWrapper = paymentGatewayWrapper;
         }
 
-        public void Checkout(PaymentDetails paymentDetails, Cart cart)
+        public override bool Checkout(Cart cart)
         {
 
-            NotifyCustomer(cart);
+            return NotifyCustomer(cart);
 
         }
 
-        private void NotifyCustomer(Cart cart)
+        private bool NotifyCustomer(Cart cart)
         {
             string customerEmail = cart.CustomerEmail;
+            bool result = false;
             if (!String.IsNullOrEmpty(customerEmail))
             {
                 using (var message = new MailMessage("orders@somewhere.com", customerEmail))
@@ -38,15 +45,18 @@ namespace exercici2.original.model
                     try
                     {
                         client.Send(message);
+                        result = true;
                     }
                     catch (Exception ex)
                     {
                         //Fallara siempre
                         //Logger.Error("Problem sending notification email", ex);
                         loggerWrapper.Error(ex);
+                        result = false;
                     }
                 }
             }
+            return result;
         }
     }
 }

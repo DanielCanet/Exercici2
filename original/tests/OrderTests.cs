@@ -23,21 +23,14 @@ namespace exercici2.original.tests
         public void OriginalCashOrder()
 
         {
-            //NO ES NECESARIO EN LA COMPRA EN EFECTIVO
-            //var cashPaymentDetails = new PaymentDetails
-            //{
-            //    PaymentMethod = PaymentMethod.Cash,
-            //    CreditCardNumber = string.Empty,
-            //    ExpiresMonth = string.Empty,
-            //    ExpiresYear = string.Empty,
-            //    CardholderName = string.Empty,
-            //};
 
-            InventorySystemWrapper inventorySystemWrapper = new InventorySystemWrapper();
+ 
 
-            var orderBase = new OrderBase(inventorySystemWrapper);
+            //InventorySystemWrapper inventorySystemWrapper = new InventorySystemWrapper();
 
-            orderBase.Checkout(cart);
+            var orderByCash = new OrderByCash();
+
+            orderByCash.Checkout(cart);
         }
 
         [TestMethod]
@@ -54,9 +47,9 @@ namespace exercici2.original.tests
 
             PaymentGatewayWrapper paymentGatewayWrapper = new PaymentGatewayWrapper();
 
-            var orderByCreditCard = new OrderByCreditCard(paymentGatewayWrapper);
+            var orderByCreditCard = new OrderByCreditCard(paymentGatewayWrapper, paymentDetails);
 
-            orderByCreditCard.Checkout(paymentDetails, cart);
+            orderByCreditCard.Checkout(cart);
         }
 
         [TestMethod]
@@ -73,9 +66,9 @@ namespace exercici2.original.tests
 
             LoggerWrapper loggerWrapper = new LoggerWrapper();
 
-            var orderOnline = new OrderOnline(loggerWrapper);
+            var orderOnline = new OrderOnline(loggerWrapper, paymentDetails);
 
-            orderOnline.Checkout(paymentDetails, cart);
+            orderOnline.Checkout(cart);
         }
     }
 }
