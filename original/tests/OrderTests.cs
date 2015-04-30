@@ -32,7 +32,7 @@ namespace exercici2.original.tests
             result = orderByCash.Checkout(cart);
 
             //Assert
-            Assert.AreEqual(true, result, "Ha habido algún proglema al realizar el pedido Online");
+            Assert.AreEqual(true, result, "Ha habido algún proglema al realizar el pedido en efectivo");
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace exercici2.original.tests
             result = orderByCreditCard.Checkout(cart);
 
             //Assert
-            Assert.AreEqual(true, result, "Ha habido algún proglema al realizar el pedido Online");
+            Assert.AreEqual(true, result, "Ha habido algún proglema al realizar el pedido con tarjeta de crédito");
         }
 
         [TestMethod]

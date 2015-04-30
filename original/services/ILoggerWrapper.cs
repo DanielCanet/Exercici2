@@ -5,7 +5,7 @@ using System.Text;
 
 namespace exercici2.original.services
 {
-    interface ILoggerWrapper
+    public interface ILoggerWrapper
     {
         bool Error(Exception messageError);
     }

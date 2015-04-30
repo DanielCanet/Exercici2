@@ -6,7 +6,7 @@ using System.Text;
 
 namespace exercici2.original.services
 {
-    interface IPaymentGatewayWrapper
+    public interface IPaymentGatewayWrapper
     {
         PaymentGateway paymentGateway { get; set; }
         bool Charge(PaymentDetails paymentDetails, Cart cart);
