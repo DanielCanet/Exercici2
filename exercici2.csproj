@@ -81,6 +81,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="original\services\IinventorySystemWrapper.cs" />
+    <Compile Include="original\services\ILoggerWrapper.cs" />
     <Compile Include="original\services\InsufficientInventoryException.cs">
       <SubType>Code</SubType>
     </Compile>

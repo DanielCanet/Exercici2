@@ -8,7 +8,7 @@ using System.Text;
 
 namespace exercici2.original.services
 {
-    class LoggerWrapper
+    class LoggerWrapper : ILoggerWrapper
     {
         public bool Error(Exception messageError)
         {

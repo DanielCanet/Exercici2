@@ -24,10 +24,15 @@ namespace exercici2.original.tests
         public void OriginalCashOrder()
 
         {
-
+            //Arange
             var orderByCash = new OrderByCash();
+            bool result = false;
 
-            orderByCash.Checkout(cart);
+            //Action
+            result = orderByCash.Checkout(cart);
+
+            //Assert
+            Assert.AreEqual(true, result, "Ha habido algún proglema al realizar el pedido Online");
         }
 
         [TestMethod]
@@ -35,23 +40,29 @@ namespace exercici2.original.tests
         {
             var paymentDetails = new PaymentDetails
             {
+                //Arange
                 PaymentMethod = PaymentMethod.CreditCard,
                 CreditCardNumber = "creditCardNumber",
                 ExpiresMonth = "08",
                 ExpiresYear = "16",
                 CardholderName = "Customer Name",
-            };
-
+            };            
+            bool result = true;
+            
             Mock<IPaymentGatewayWrapper> paymentGatewayWrapperMock = new Mock<IPaymentGatewayWrapper>();
-
             var orderByCreditCard = new OrderByCreditCard(paymentGatewayWrapperMock.Object, paymentDetails);
 
-            orderByCreditCard.Checkout(cart);
+            //Action
+            result = orderByCreditCard.Checkout(cart);
+
+            //Assert
+            Assert.AreEqual(true, result, "Ha habido algún proglema al realizar el pedido Online");
         }
 
         [TestMethod]
         public void OriginalOnlineOrder()
         {
+            //Arrange
             var paymentDetails = new PaymentDetails
             {
                 PaymentMethod = PaymentMethod.CreditCard,
@@ -60,12 +71,16 @@ namespace exercici2.original.tests
                 ExpiresYear = "16",
                 CardholderName = "Customer Name",
             };
+            bool result = false;
 
-            LoggerWrapper loggerWrapper = new LoggerWrapper();
+            Mock<ILoggerWrapper> loggerWrapperMock = new Mock<ILoggerWrapper>();
+            var orderOnline = new OrderOnline(loggerWrapperMock.Object, paymentDetails);
 
-            var orderOnline = new OrderOnline(loggerWrapper, paymentDetails);
+            //Action
+            result = orderOnline.Checkout(cart);
 
-            orderOnline.Checkout(cart);
+            //Assert
+            Assert.AreEqual(true, result, "Ha habido algún proglema al realizar el pedido Online");
         }
     }
 }

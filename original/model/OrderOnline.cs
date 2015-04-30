@@ -10,10 +10,10 @@ namespace exercici2.original.model
 {
     class OrderOnline:OrderByCreditCard
     {
-        public LoggerWrapper loggerWrapper { get; set; }
+        public ILoggerWrapper loggerWrapper { get; set; }
         public PaymentDetails paymentDetails { get; set; }
 
-        public OrderOnline(LoggerWrapper loggerWrapper, PaymentDetails paymentDetails)
+        public OrderOnline(ILoggerWrapper loggerWrapper, PaymentDetails paymentDetails)
             : base(new PaymentGatewayWrapper(), new PaymentDetails())
         {
             this.loggerWrapper = loggerWrapper;
